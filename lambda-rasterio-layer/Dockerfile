@@ -8,6 +8,3 @@ RUN pip3 install rasterio==1.2.10 numpy==1.23.5 -t /opt/python
 
 # Shrink size by stripping binaries
 RUN find /opt/python -name "*.so" -exec strip {} \;
-
-# Package the layer
-RUN cd /opt && zip -r9 /workspace/rasterio-layer.zip python
